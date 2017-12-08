@@ -1,3 +1,3 @@
-stroopdata*
-p1*.docx
+p1/stroopdata*
+p1/p1*.docx
 .ipynb_checkpoints/
