@@ -24,6 +24,6 @@ class Movie():
 
 	"""
 	打开电影播放地址
-    """
+	"""
 	def show_trailer(self):
 		webbrowser.open(self.trailer_youtube_url)
