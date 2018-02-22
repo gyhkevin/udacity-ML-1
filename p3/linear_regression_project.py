@@ -323,21 +323,25 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 # 
 # 
 # $ Ab = \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     7 & 5 & 3 & 1 \\
+#     -5 & -4 & 6 & 1 \\
+#     2 & -2 & -9 & 1 \end{bmatrix}$
 # 
 # $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     1 & \frac{5}{7} & \frac{3}{7} & \frac{1}{7} \\
+#     0 & -\frac{3}{7} & \frac{57}{7} & \frac{12}{7} \\
+#     0 & -\frac{24}{7} & -\frac{69}{7} & \frac{5}{7} \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     1 & \frac{5}{7} & \frac{3}{7} & \frac{1}{7} \\
+#     0 & 1 & -19 & -4 \\
+#     0 & -\frac{24}{7} & -\frac{69}{7} & \frac{5}{7} \end{bmatrix}$
 #     
-# $...$
+# $ --> \begin{bmatrix}
+#     1 & 0 & 0 & \frac{43}{75} \\
+#     0 & 1 & 0 & -\frac{53}{75} \\
+#     0 & 0 & 1 & \frac{13}{75} \end{bmatrix}$
+# 
 
 # In[104]:
 
@@ -361,21 +365,24 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 # 
 # 
 # $ Ab = \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     -1 & 6 & -8 & 1 \\
+#     -10 & -5 & 5 & 1 \\
+#     -9 & 2 & -4 & 1 \end{bmatrix}$
 # 
 # $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     -1 & 6 & -8 & 1 \\
+#     0 & -65 & 86 & -9 \\
+#     0 & -52 & 68 & -8 \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     -1 & 6 & -8 & 1 \\
+#     0 & 1 & -\frac{86}{65} & -\frac{9}{65} \\
+#     0 & 0 & -\frac{4}{5} & -\frac{4}{5} \end{bmatrix}$
 #     
-# $...$
+# $ --> \begin{bmatrix}
+#     1 & 0 & 0 & -\frac{3}{13} \\
+#     0 & 1 & 0 & \frac{19}{13} \\
+#     0 & 0 & 1 & 1 \end{bmatrix}$
 
 # ### 2.3.3 实现 Gaussian Jordan 消元法
 
