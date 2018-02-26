@@ -11828,10 +11828,10 @@ div#notebook {
      <span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
 
 <span class="c1">#TODO 创建一个 4*4 单位矩阵</span>
-<span class="n">I</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
 </pre></div>
 
 </div>
@@ -12574,17 +12574,33 @@ $\begin{bmatrix}
     -10 &amp; -5 &amp; 5 &amp; 1 \\
     -9 &amp; 2 &amp; -4 &amp; 1 \end{bmatrix}$</p>
 <p>$ --&gt; \begin{bmatrix}
-    -1 &amp; 6 &amp; -8 &amp; 1 \\
-    0 &amp; -65 &amp; 86 &amp; -9 \\
+    1 &amp; -6 &amp; 8 &amp; -1 \\
+    0 &amp; -65 &amp; 85 &amp; -9 \\
+    -9 &amp; 2 &amp; -4 &amp; 1 \end{bmatrix}$</p>
+<p>$ --&gt; \begin{bmatrix}
+    1 &amp; -6 &amp; 8 &amp; -1 \\
+    0 &amp; 1 &amp; -\frac{17}{13} &amp; -\frac{9}{65} \\
     0 &amp; -52 &amp; 68 &amp; -8 \end{bmatrix}$</p>
 <p>$ --&gt; \begin{bmatrix}
-    -1 &amp; 6 &amp; -8 &amp; 1 \\
-    0 &amp; 1 &amp; -\frac{86}{65} &amp; -\frac{9}{65} \\
-    0 &amp; 0 &amp; -\frac{4}{5} &amp; -\frac{4}{5} \end{bmatrix}$</p>
+    1 &amp; -6 &amp; 8 &amp; -1 \\
+    0 &amp; 1 &amp; -\frac{17}{13} &amp; -\frac{9}{65} \\
+    0 &amp; 0 &amp; 0 &amp; -\frac{4}{5} \end{bmatrix}$</p>
 <p>$ --&gt; \begin{bmatrix}
-    1 &amp; 0 &amp; 0 &amp; -\frac{3}{13} \\
-    0 &amp; 1 &amp; 0 &amp; \frac{19}{13} \\
-    0 &amp; 0 &amp; 1 &amp; 1 \end{bmatrix}$</p>
+    1 &amp; -6 &amp; 8 &amp; -1 \\
+    0 &amp; 1 &amp; -\frac{17}{13} &amp; -\frac{9}{65} \\
+    0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$</p>
+<p>$ --&gt; \begin{bmatrix}
+    1 &amp; -6 &amp; 8 &amp; -1 \\
+    0 &amp; 1 &amp; -\frac{17}{13} &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$</p>
+<p>$ --&gt; \begin{bmatrix}
+    1 &amp; -6 &amp; 8 &amp; 0 \\
+    0 &amp; 1 &amp; -\frac{17}{13} &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$</p>
+<p>$ --&gt; \begin{bmatrix}
+    1 &amp; 0 &amp; \frac{2}{13} &amp; 0 \\
+    0 &amp; 1 &amp; -\frac{17}{13} &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$</p>
 
 </div>
 </div>
