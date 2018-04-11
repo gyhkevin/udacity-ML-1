@@ -12295,13 +12295,13 @@ dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 直接修改数据进行填充</span>
 <span class="c1"># 使用median填充Age的缺失值，但是总是没有效果，不知道是怎么回事，</span>
 <span class="c1"># Mac环境目录p4的权限都加了，`sudo chmod -R 777 p4/`</span>
-<span class="n">full_data</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">age_median</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">full_data</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">age_median</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">full_data</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
@@ -12319,18 +12319,18 @@ dtype: float64
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/kevin/anaconda2/lib/python2.7/site-packages/pandas/core/generic.py:4355: SettingWithCopyWarning: 
+<pre>/Users/kevin/anaconda2/lib/python2.7/site-packages/pandas/core/frame.py:3035: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-  self._update_inplace(new_data)
+  downcast=downcast, **kwargs)
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -12631,7 +12631,7 @@ Name: Survived, dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">age_total</span> <span class="o">=</span> <span class="n">full_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span>
@@ -12680,7 +12680,7 @@ Name: Survived, dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -12741,7 +12741,7 @@ Name: Survived, dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -12803,7 +12803,8 @@ Name: Survived, dtype: float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>女性和10岁以下儿童的存活率最高。</p>
+<p>整体来说，生存率只有38%，<strong>Cabin</strong>的缺失值太多，忽略其影响因素，其他的因素有很多，主要分析了<strong>Age</strong>和<strong>Sex</strong>2个特征。通过分析<strong>Sex</strong>特征，发现女性的总数只有35%，但是存活率却有74%，表明男士会展现绅士风度，把生存机会让个女士。<strong>Age</strong>有部分数据缺失，使用中位数填充。年龄在（0-10）的儿童，相对其他年龄段的人，生存率最高，有59%，说明人们希望把生存机会留个孩子。</p>
+<p>本报告中使用的数据并不是全部数据，只有891人，但实际的全部人数有2207人，不到50%的样本数量可能会对结论有影响，取决于抽样数据的随机性。<strong>Age</strong>特征有177条数据缺失，虽然使用中位数填充，但也可能影响分析结果。还有其他的影响因素，比如<strong>Pclass</strong>,<strong>SibSp</strong>,<strong>Parch</strong>等，未做分析，但也可能是影响存活率的因素。</p>
 <p>参考：</p>
 <ul>
 <li><a href="https://blog.csdn.net/PatrickZheng/article/details/73843594">探索数据集</a></li>
